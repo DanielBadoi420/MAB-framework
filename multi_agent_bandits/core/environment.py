@@ -12,6 +12,9 @@ class Environment:
         self.n_arms = len(arms)
         self.collision_policy = collision_policy
 
+        self.collision_count_log = []
+        self.global_reward_log = []
+
     def sample_reward(self, arm_idx):
         return self.arms[arm_idx].sample()
 
@@ -23,7 +26,13 @@ class Environment:
             collisions.setdefault(arm, []).append(i)
 
         rewards = [0.0] * len(agents)
+
+        collision_count = 0
+
         for arm, agent_ids in collisions.items():
+            if len(agent_ids) > 1:
+                collision_count += 1
+
             raw_reward = self.sample_reward(arm)
 
             if len(agent_ids) == 1:
@@ -35,5 +44,8 @@ class Environment:
 
         for agent, reward in zip(agents, rewards):
             agent.update(reward)
+
+        self.collision_count_log.append(collision_count)
+        self.global_reward_log.append(sum(rewards))
 
         return choices, rewards

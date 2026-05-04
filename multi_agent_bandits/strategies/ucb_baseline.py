@@ -17,23 +17,25 @@ class UCB_BaselineAgent(Agent):
         self.total_steps = 0
         self.last_arm = None
 
-    def choose_arm(self):
+    def choose_arm(self, available_arms = None):
         self.total_steps += 1
 
-        #ensure we try each arm at least once
-        for arm in range(self.n_arms):
+        if available_arms is None:
+            available_arms = list(range(self.n_arms))
+
+        #try each available arm at least once
+        for arm in available_arms:
             if self.counts[arm] == 0:
                 self.last_arm = arm
                 return arm
 
+        ucb_scores = {}
 
-        ucb_scores = []
-        for arm in range(self.n_arms):
+        for arm in available_arms:
             bonus = math.sqrt((2 * math.log(self.total_steps)) / self.counts[arm])
-            ucb_scores.append(self.values[arm] + bonus)
+            ucb_scores[arm] = self.values[arm] + bonus
 
-        #pick best
-        self.last_arm = max(range(self.n_arms), key=lambda a: ucb_scores[a])
+        self.last_arm = max(available_arms, key=lambda a: ucb_scores[a])
         return self.last_arm
 
     def update(self, reward):

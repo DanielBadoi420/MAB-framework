@@ -11,12 +11,15 @@ class EpsilonGreedyAgent(Agent):
         self.values = [0.0] * n_arms
         self.last_arm = None
 
-    def choose_arm(self):
+    def choose_arm(self, available_arms = None):
+        if available_arms is None:
+            available_arms = list(range(self.n_arms))
+
         if random.random() < self.epsilon:
-            self.last_arm = random.randrange(self.n_arms)
+            self.last_arm = random.choice(available_arms)
             return self.last_arm
 
-        self.last_arm = max(range(self.n_arms), key=lambda a: self.values[a])
+        self.last_arm = max(available_arms, key=lambda a: self.values[a])
         return self.last_arm
 
     def update(self, reward):
