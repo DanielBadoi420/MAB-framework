@@ -28,8 +28,9 @@ class ExperimentRunner:
             print(f"  - Agent {i}: {ag.name}")
         print("==========================")
 
-    def run(self, plot_rewards=False, plot_frequencies=False):
-        self.print_experiment_info()
+    def run(self, plot_rewards=False, plot_frequencies=False, verbose = True):
+        if verbose:
+            self.print_experiment_info()
 
         for t in range(self.T):
             choices, rewards = self.env.step(self.agents)
@@ -121,6 +122,8 @@ class ExperimentRunner:
         counts = np.zeros((n_agents, n_arms), dtype=int)
         for step in self.choices_log:
             for agent_idx, arm in enumerate(step):
+                if arm is None:
+                    continue
                 counts[agent_idx, arm] += 1
         fig, axes = plt.subplots(n_agents, 1, figsize=(8, 3 * n_agents), sharex=True)
         if n_agents == 1:
