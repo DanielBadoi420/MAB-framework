@@ -1,19 +1,22 @@
 import pandas as pd
 
-INPUT_PATH = "results/circuit_breaker_batch/summary_results.csv"
-OUTPUT_PATH_1 = "results/circuit_breaker_batch/aggregated_results.csv"
-OUTPUT_PATH_2 = "results/circuit_breaker_batch/agent_results.csv"
+INPUT_PATH = "results/collision_policy_comparison/summary_results.csv"
+OUTPUT_PATH_1 = "results/collision_policy_comparison/aggregated_results.csv"
+OUTPUT_PATH_2 = "results/collision_policy_comparison/agent_results.csv"
 
 df = pd.read_csv(INPUT_PATH)
 
 metrics = [
     "avg_global_reward",
+    "avg_reward_per_agent_per_step",
     "reward_volatility",
     "total_collisions",
     "avg_collisions_per_step",
     "total_halted_choices",
     "total_triggers",
     "gini_total_rewards",
+    "market_wide_halt_steps",
+    "avg_available_arms"
 ]
 
 agent_columns = [
