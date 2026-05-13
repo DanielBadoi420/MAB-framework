@@ -74,3 +74,9 @@ There's available flags for this command, defining number of steps, logging and 
 mab run example --steps 20000 --save results/example --plot-rewards --plot-frequencies
 
 which would execute the experiments/example.py script, override the default number of steps to 20000, save results to results/example, and plot both kinds of plots.
+
+To run batch experiments you can run this in the terminal in the MAB framework directury:
+mab run circuit_breaker_batch --steps 10000 --save results/circuit_breaker_batch
+
+To analyze these results:
+python multi_agent_bandits/experiments/analyze_circuit_breaker_results.py       

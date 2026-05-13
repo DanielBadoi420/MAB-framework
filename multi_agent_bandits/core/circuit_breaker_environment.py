@@ -52,6 +52,8 @@ class CircuitBreakerEnvironment(Environment):
         self.collision_count_log = []
         self.disabled_choice_count_log = []
         self.global_reward_log = []
+        self.market_wide_halt_log = []
+        self.n_available_arms_log = []
 
     def update_cooldowns(self):
         """
@@ -108,6 +110,8 @@ class CircuitBreakerEnvironment(Environment):
             self.collision_count_log.append(0)
             self.disabled_choice_count_log.append(0)
             self.global_reward_log.append(sum(rewards))
+            self.market_wide_halt_log.append(1)
+            self.n_available_arms_log.append(0)
 
             return choices, rewards
 
@@ -163,5 +167,7 @@ class CircuitBreakerEnvironment(Environment):
         self.collision_count_log.append(collision_count)
         self.disabled_choice_count_log.append(disabled_choice_count)
         self.global_reward_log.append(sum(rewards))
+        self.market_wide_halt_log.append(0)
+        self.n_available_arms_log.append(len(available_arms))
 
         return choices, rewards
