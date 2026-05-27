@@ -4,8 +4,8 @@ import os
 from collections import defaultdict
 
 
-INPUT_PATH = "results/final_market_density_linear/summary_results.csv"
-OUTPUT_DIR = "results/final_market_density_linear"
+INPUT_PATH = "results/collision_policy_comparison/summary_results.csv"
+OUTPUT_DIR = "results/collision_policy_comparison"
 
 AGGREGATED_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "aggregated_results.csv")
 AGENT_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "agent_results.csv")
@@ -78,28 +78,28 @@ def infer_baseline_name(row):
     """
     Find the correct baseline for a condition.
 
-    Main linear-share experiment:
+    For the main experiment:
         balanced_cb_... -> balanced_baseline
 
-    Collision-policy experiment:
+    For the collision-policy experiment:
         balanced_zero_on_collision_cb_... -> balanced_zero_on_collision_baseline
         high_congestion_linear_share_cb_... -> high_congestion_linear_share_baseline
     """
 
     condition_name = row["condition_name"]
 
+    # If this row is already a baseline, it is its own baseline.
     if condition_name.endswith("_baseline"):
         return condition_name
 
     market_name = row.get("market_name", "")
     collision_policy = row.get("collision_policy", "")
 
-    if condition_name.startswith(f"{market_name}_cb_"):
-        return f"{market_name}_baseline"
-
+    # Collision-policy experiment baseline.
     if collision_policy:
         return f"{market_name}_{collision_policy}_baseline"
 
+    # Main market-density experiment baseline.
     return f"{market_name}_baseline"
 
 

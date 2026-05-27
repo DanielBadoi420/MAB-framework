@@ -161,13 +161,16 @@ class CircuitBreakerEnvironment(Environment):
         for agent, reward in zip(agents, rewards):
             agent.update(reward)
 
+        halted_arms_after = self.get_halted_arms()
+        available_arms_after = self.get_available_arms()
+
         self.breaker_triggers_log.append(triggered_arms)
-        self.halted_arms_log.append(halted_arms)
-        self.available_arms_log.append(available_arms)
+        self.halted_arms_log.append(halted_arms_after)
+        self.available_arms_log.append(available_arms_after)
         self.collision_count_log.append(collision_count)
         self.disabled_choice_count_log.append(disabled_choice_count)
         self.global_reward_log.append(sum(rewards))
         self.market_wide_halt_log.append(0)
-        self.n_available_arms_log.append(len(available_arms))
+        self.n_available_arms_log.append(len(available_arms_after))
 
         return choices, rewards
