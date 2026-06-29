@@ -1,0 +1,10 @@
+Market type,Metric,Mild mean,Strict mean,Statistic,Holm-adjusted p
+Low congestion,Average reward per agent,1.540,1.527,146.00,1.000
+Low congestion,Average available arms,10.000,9.950,0.00,1.46e-04
+Low congestion,Total triggers,0.933,99.167,0.00,1.46e-04
+Balanced,Average reward per agent,1.295,0.301,0.00,1.73e-07
+Balanced,Average available arms,4.998,0.004,0.00,1.46e-04
+Balanced,Total triggers,5.333,9994.967,0.00,1.46e-04
+High congestion,Average reward per agent,0.739,0.503,81.00,0.058
+High congestion,Average available arms,5.000,2.991,0.00,1.46e-04
+High congestion,Total triggers,0.067,4019.867,0.00,1.46e-04

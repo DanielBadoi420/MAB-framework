@@ -1,0 +1,4 @@
+Setting,Opaque relative efficiency,Transparent relative efficiency,Opaque halted choices mean
+"Balanced, ratio 0.6, halt 3",0.987,0.990,691.867
+"Balanced, ratio 0.6, halt 5",0.974,0.233,1283.233
+"Balanced, ratio 0.6, halt 10",0.943,0.117,2637.800

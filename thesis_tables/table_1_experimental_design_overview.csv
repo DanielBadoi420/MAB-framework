@@ -1,0 +1,4 @@
+Market setting,Agents,Arms,Agent-to-arm ratio,Density interpretation,Purpose in the experiment
+Low congestion,5,10,0.50,More arms than agents,Tests behaviour when agents can spread across opportunities.
+Balanced,5,5,1.00,Equal number of agents and arms,Main reference case where crowding can emerge but is not structurally unavoidable.
+High congestion,10,5,2.00,More agents than arms,Tests behaviour when competition for arms is structurally stronger.

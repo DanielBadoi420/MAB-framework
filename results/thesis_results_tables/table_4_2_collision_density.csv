@@ -1,0 +1,4 @@
+Market type,Average collisions per timestep mean,95% CI
+Low congestion,0.468,"[0.465, 0.470]"
+Balanced,0.893,"[0.890, 0.897]"
+High congestion,3.503,"[3.485, 3.521]"

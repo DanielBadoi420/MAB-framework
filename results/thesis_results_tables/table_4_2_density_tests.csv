@@ -1,0 +1,3 @@
+Metric,Test,Statistic,Holm-adjusted p
+avg_reward_per_agent_per_step,Kruskal-Wallis,79.12,6.26e-16
+avg_collisions_per_step,Kruskal-Wallis,79.12,6.26e-16
