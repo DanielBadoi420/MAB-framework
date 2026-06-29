@@ -1,0 +1,11 @@
+Setting,Metric,Statistic,Holm-adjusted p
+"Balanced, ratio 0.6, halt 5",Average reward per agent,0.00,1.73e-07
+"Balanced, ratio 0.6, halt 5",Average collisions per timestep,0.00,1.46e-04
+"Balanced, ratio 0.6, halt 5",Total halted choices,0.00,1.73e-07
+"Balanced, ratio 0.6, halt 5",Total triggers,0.00,1.46e-04
+"Balanced, ratio 0.6, halt 5",Average available arms,0.00,1.46e-04
+"High congestion, ratio 0.6, halt 10",Average reward per agent,0.00,1.73e-07
+"High congestion, ratio 0.6, halt 10",Average collisions per timestep,0.00,1.46e-04
+"High congestion, ratio 0.6, halt 10",Total halted choices,0.00,1.46e-04
+"High congestion, ratio 0.6, halt 10",Total triggers,0.00,1.46e-04
+"High congestion, ratio 0.6, halt 10",Average available arms,0.00,1.73e-07

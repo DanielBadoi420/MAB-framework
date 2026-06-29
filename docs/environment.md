@@ -74,3 +74,36 @@ There's available flags for this command, defining number of steps, logging and 
 mab run example --steps 20000 --save results/example --plot-rewards --plot-frequencies
 
 which would execute the experiments/example.py script, override the default number of steps to 20000, save results to results/example, and plot both kinds of plots.
+
+
+
+
+This is how to run the files needed for the thesis:
+
+To run batch experiments with the linear sharing policy you can run this in the terminal in the MAB framework directory:
+mab run circuit_breaker_batch --steps 10000 --save results/final_market_density_linear
+
+To analyze linear_sharing results and create aggregate_results and agent_results:
+python multi_agent_bandits/experiments/analyze_circuit_breaker_results.py      
+
+To run batch experiments with the comparison between policies you can run this in the terminal in the MAB framework directory:
+mab run circuit_breaker_collision_batch --steps 10000 --save results/collision_policy_comparison
+
+To analyze comparison results and create aggregate_results and agent_results:
+python multi_agent_bandits/experiments/analyze_circuit_breaker_collision_results.py       
+
+To create the figures used in the thesis:
+python multi_agent_bandits/experiments/final_thesis_plots.py --linear-agg results/final_market_density_linear/aggregated_results.csv --collision-agg results/collision_policy_comparison/aggregated_results.csv --out thesis_outputs
+
+To create thesis_results_tables:
+python multi_agent_bandits/experiments/make_results_stat_tables.py --linear results/final_market_density_linear/aggregated_results.csv --collision results/collision_policy_comparison/aggregated_results.csv --stats thesis_stats/statistical_tests_results.csv --out results/thesis_results_tables
+
+To run statistical tests:
+python multi_agent_bandits/experiments/final_thesis_stats.py --linear-summary results/final_market_density_linear/summary_results.csv --collision-summary results/collision_policy_comparison/summary_results.csv --out thesis_stats  
+
+For simple stat summary table:
+python multi_agent_bandits/experiments/make_stats_summary_table.py --input thesis_stats/statistical_tests_results.csv --output thesis_stats/stats_summary_table.csv  
+
+To create thesis_tables:
+python multi_agent_bandits/experiments/final_thesis_tables.py --linear-agg results/final_market_density_linear/aggregated_results.csv --collision-agg results/collision_policy_comparison/aggregated_results.csv --out thesis_tables  
+

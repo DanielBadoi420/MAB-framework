@@ -1,0 +1,7 @@
+Threshold ratio,Halt duration,Strictness label,Design interpretation,Balanced opaque relative efficiency,Balanced transparent relative efficiency
+0.8,3,Mild,High threshold and short halt. Intervention is rare and brief.,0.998,1.002
+0.8,5,Mild to moderate,High threshold but longer halt. Intervention remains selective.,1.001,0.998
+0.8,10,Moderate,High threshold with long halt. Can matter when triggers repeat.,1.000,0.766
+0.6,3,Moderate,Lower threshold but short halt. Intervention is easier to trigger but recovery is quick.,0.987,0.990
+0.6,5,Strict,Lower threshold and medium halt. Can strongly reduce available arms.,0.974,0.233
+0.6,10,Very strict,Lower threshold and long halt. Highest risk of repeated restriction or collapse.,0.943,0.117

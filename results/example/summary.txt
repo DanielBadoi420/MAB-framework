@@ -2,17 +2,21 @@
 Timesteps: 20000
 Number of arms: 3
 Arms:
-  Arm 0: mean=1.0, sd=1.0
-  Arm 1: mean=2.0, sd=1.0
-  Arm 2: mean=1.5, sd=1.0
+  Arm 0: mean=1.0, sd=0.2
+  Arm 1: mean=2.0, sd=1.5
+  Arm 2: mean=1.2, sd=0.3
 Collision policy: linear_share
-Number of agents: 3
+Number of agents: 5
 Agents:
   - Agent 0: RandomAgent
   - Agent 1: EpsilonGreedyAgent
   - Agent 2: UCB_BaselineAgent
+  - Agent 3: RiskAverseEpsilonGreedyAgent
+  - Agent 4: RiskAverseUCBAgent
 Total rewards:
-  Agent 0 (RandomAgent): 18442.47
-  Agent 1 (EpsilonGreedyAgent): 24509.23
-  Agent 2 (UCB_BaselineAgent): 32819.27
+  Agent 0 (RandomAgent): 3359.87
+  Agent 1 (EpsilonGreedyAgent): 3359.01
+  Agent 2 (UCB_BaselineAgent): 3359.01
+  Agent 3 (RiskAverseEpsilonGreedyAgent): 3359.01
+  Agent 4 (RiskAverseUCBAgent): 3359.01
 ============================

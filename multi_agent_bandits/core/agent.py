@@ -7,7 +7,7 @@ class Agent:
         self.n_arms = n_arms
         self.name = name if name is not None else self.__class__.__name__
 
-    def choose_arm(self):
+    def choose_arm(self, available_arms=None):
         raise NotImplementedError
 
     def update(self, reward):

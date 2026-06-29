@@ -1,0 +1,5 @@
+Hypothesis,Main comparison,Key metric(s),Test,Holm-adjusted p-value,Interpretation
+H1,Baseline low vs balanced vs high density,Reward per agent; collisions per step,Kruskal-Wallis,both < 0.001,Market density significantly affected reward efficiency and congestion.
+H2,Mild vs strict transparent breakers,Available arms; trigger count; balanced-market reward,Wilcoxon signed-rank,< 0.001 for available arms/triggers; < 0.001 for balanced reward,Stricter transparent breakers significantly changed intervention dynamics and reduced reward efficiency most clearly in the balanced market.
+H3,Opaque vs transparent breakers under matched settings,"Halted choices; strict-setting reward, collisions, triggers, and available arms",Wilcoxon signed-rank,mostly < 0.001 in strict settings,"Intervention mode significantly affected outcomes, especially under stricter breaker settings."
+H4,Linear sharing vs zero-on-collision,Reward per agent; collisions; Gini inequality,Wilcoxon signed-rank,all < 0.001,"Collision policy strongly changed reward efficiency, congestion, and inequality."

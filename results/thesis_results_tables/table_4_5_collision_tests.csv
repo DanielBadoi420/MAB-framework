@@ -1,0 +1,4 @@
+Metric,Statistic,Holm-adjusted p
+Average reward per agent,6.00,2.35e-78
+Average collisions per timestep,1768.50,4.82e-71
+Gini inequality,0.00,2.29e-78

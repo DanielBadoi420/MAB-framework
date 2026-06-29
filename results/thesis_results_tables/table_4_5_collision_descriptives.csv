@@ -1,0 +1,9 @@
+Market type,Setting,Collision policy,Relative efficiency,Average reward per agent,Gini
+Balanced,Baseline,Linear sharing,1.000,1.292,0.136
+Balanced,Baseline,Zero-on-collision,1.000,1.010,0.229
+Balanced,Transparent ratio 0.6 halt 5,Linear sharing,0.233,0.301,0.000
+Balanced,Transparent ratio 0.6 halt 5,Zero-on-collision,0.001,0.001,0.430
+High congestion,Baseline,Linear sharing,1.000,0.740,0.088
+High congestion,Baseline,Zero-on-collision,1.000,0.265,0.563
+High congestion,Transparent ratio 0.6 halt 5,Linear sharing,0.680,0.503,0.054
+High congestion,Transparent ratio 0.6 halt 5,Zero-on-collision,0.093,0.025,0.561
